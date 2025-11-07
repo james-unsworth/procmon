@@ -1,0 +1,1 @@
+/usr/sbin/cc -Wl,--dependency-file=CMakeFiles/procmon.dir/link.d CMakeFiles/procmon.dir/src/main.c.o CMakeFiles/procmon.dir/src/sampler.c.o CMakeFiles/procmon.dir/src/parser.c.o CMakeFiles/procmon.dir/src/snapshot.c.o -o procmon
