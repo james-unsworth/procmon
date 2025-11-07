@@ -11,24 +11,28 @@ extern "C" {
 
 #endif /* SNAPSHOT_H */  
 
-const size_t MAX_PID = 65536;
+#include <stddef.h>
+#include <stdint.h>
+#include <sys/types.h>
 
-enum status {
+#define MAX_PID 65536
+
+typedef enum status {
   ACTIVE,
   EXPITED,
   EMPTY
-}
+} status;
 
-struct process_entry {
+typedef struct process_entry {
   pid_t pid;
   char *comm;
   char *user;
   uint64_t utime;
   uint64_t stime;
-  // status;
-}; 
+  // status status;
+} process_entry; 
 
-struct CPU_snapshot {
+typedef struct cpu_snapshot {
   uint64_t user,
            nice,
            system, 
@@ -38,12 +42,13 @@ struct CPU_snapshot {
            softirq,
            steal,
            guest,
-           guest_nice
-}
+           guest_nice;
+} cpu_snapshot;
 
-struct system-snapshot {
-  CPU_snapshot *cpu;
-  process_entry[] processes;
+typedef struct system_snapshot {
+  cpu_snapshot *cpu;
+  process_entry *processes[MAX_PID];
   char *timestamp;
-}
+} system_snapshot;
 
+int print_cpu(cpu_snapshot *cpu_sh);
