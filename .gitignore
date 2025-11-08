@@ -1,0 +1,53 @@
+# -------------------------------
+# Build and CMake generated files
+# -------------------------------
+/build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# -------------------------------
+# Compiled object and binary files
+# -------------------------------
+*.o
+*.obj
+*.so
+*.so.*
+*.a
+*.out
+*.exe
+*.dll
+*.dylib
+
+# -------------------------------
+# Debug / profiling outputs
+# -------------------------------
+*.gcno
+*.gcda
+*.gcov
+*.gprof
+*.perf
+*.dSYM/
+
+# -------------------------------
+# Logs and temporary files
+# -------------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# -------------------------------
+# IDE / editor metadata
+# -------------------------------
+.vscode/
+.idea/
+*.user
+*.workspace
+*.project
+*.cproject
+.DS_Store
