@@ -15,11 +15,11 @@ extern "C" {
 #include <stdint.h>
 #include <sys/types.h>
 
-#define MAX_PID 65536
+#define MAX_PIDS 65536
 
 typedef enum status {
   ACTIVE,
-  EXPITED,
+  EXITED,
   EMPTY
 } status;
 
@@ -29,7 +29,7 @@ typedef struct process_entry {
   char *user;
   uint64_t utime;
   uint64_t stime;
-  // status status;
+  enum status status;
 } process_entry; 
 
 typedef struct cpu_snapshot {
@@ -47,7 +47,7 @@ typedef struct cpu_snapshot {
 
 typedef struct system_snapshot {
   cpu_snapshot *cpu;
-  process_entry *processes[MAX_PID];
+  process_entry *processes[MAX_PIDS];
   char *timestamp;
 } system_snapshot;
 
