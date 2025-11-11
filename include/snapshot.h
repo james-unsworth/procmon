@@ -26,9 +26,12 @@ typedef enum status {
 typedef struct process_entry {
   pid_t pid;
   char *comm;
+  char state;
   char *user;
   uint64_t utime;
   uint64_t stime;
+  uint64_t total_time;
+  uint64_t rss;
   enum status status;
 } process_entry; 
 
