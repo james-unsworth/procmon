@@ -16,6 +16,7 @@ extern "C" {
 #include <sys/types.h>
 
 #define MAX_PIDS 65536
+#define COMM_LENGTH 64
 
 typedef enum status {
   ACTIVE,
@@ -25,13 +26,14 @@ typedef enum status {
 
 typedef struct process_entry {
   pid_t pid;
-  char *comm;
+  char comm[COMM_LENGTH];
   char state;
   char *user;
   uint64_t utime;
   uint64_t stime;
   uint64_t total_time;
   uint64_t rss;
+  bool seen_this_cycle;
   enum status status;
 } process_entry; 
 
